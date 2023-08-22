@@ -8,8 +8,9 @@ public class Main {
 	public static void main(String[] args) {
 		int choice;
 		String con;
-				Scanner sc = new Scanner(System.in);
-				Scanner scanner  = new Scanner(System.in);
+		int scanner;
+		scanner = 1;
+		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("1:Retrieve file names in ascending order 2:Add, delete, search a file 3:Close");
 			System.out.println("Plz enter your choice");
@@ -17,7 +18,8 @@ public class Main {
 			if (choice == 1) {
 				System.out.println("Here you are the files in ascending order");		
 			} else if (choice == 2) {
-							showSubMenu(scanner);
+				showSubMenu(scanner);
+				
 				
 			} else if (choice == 3) {
 				System.exit(0);
@@ -32,30 +34,9 @@ public class Main {
 
 	}
 
-	private static void showSubMenu(Scanner scanner) {
-					
-			int subChoice;
-					
-			do {
-				System.out.println("1:Add a file 2:Delet a file 3:Return to Main Menu");
-				System.out.println("Plz enter your choice");
-				subChoice = scanner.nextInt();
-				switch (subChoice) {
-				case 1:
-					System.out.println("You are adding a file");
-					break;
-				case 2:
-					System.out.println("You are deleting a file");
-					break;
-				case 3:
-					System.out.println("You are returning to Main Menu");
-					break;
-				default:
-				System.out.println("Opcion no valida");
-				}
-			} while (subChoice != 3);
-			}
+	private static void showSubMenu(int scanner) {
+		// TODO Auto-generated method stub
 		
-	
+	}
 
 }

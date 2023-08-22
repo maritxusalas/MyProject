@@ -1,0 +1,28 @@
+package com.virtual.key;
+
+import java.util.Scanner;
+
+public class showSubMenu {
+	public showSubMenu (Scanner scanner) {
+	
+	int subChoice;
+	subChoice = 1;
+	
+	do {
+		System.out.println("1:Add a file 2:Delet a file 3:Return to Main Menu");
+		System.out.println("Plz enter your choice");
+		switch (subChoice) {
+		case 1:
+			System.out.println("You are adding a file");
+		case 2:
+			System.out.println("You are deleting a file");
+		case 3:
+			System.out.println("You are returning to Main Menu");
+			break;
+		default:
+		System.out.println("Opcion no valida");
+		}
+	} while (subChoice != 3);
+	}
+
+}

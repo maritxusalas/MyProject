@@ -1,0 +1,37 @@
+package com.virtual.key;
+
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		int choice;
+		int choice2;
+		String con;
+		Scanner sc = new Scanner(System.in);
+		do {
+			System.out.println("1:Retrieve file names in ascending order 2:Add, delete, search a file 3:Close");
+			System.out.println("Plz enter your choice");
+			choice = sc.nextInt();
+			if (choice == 1) {
+				System.out.println("Here you are the files in ascending order");		
+			} else if (choice == 2) {
+				System.out.println("1:Add file 2:Delete file 3:ReturntoMainMenu");
+				System.out.println("Plz enter your choice");
+				choice2 = sc.nextInt();
+				
+				
+			} else if (choice == 3) {
+				System.exit(0);
+			} else {
+				System.out.println("Wrong Choice");
+			}
+			System.out.println("do you want to continue?");
+			con = sc.next();
+		}while (con.equalsIgnoreCase("y"));
+		System.out.println("Thank you!");
+		sc.close();
+
+	}
+
+}
