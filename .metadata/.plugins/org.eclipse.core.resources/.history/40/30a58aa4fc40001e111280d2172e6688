@@ -1,0 +1,21 @@
+package com.virtual.key;
+
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		int choice;
+		Scanner sc = new Scanner(System.in);
+		do {
+			System.out.println("1:Retrieve file names in ascending order 2:Add, delete, search a file 3:Close");
+			System.out.println("Plz enter your choice");
+			choice = sc.nextInt();
+			switch(choice) {
+			
+			}
+		}
+
+	}
+
+}

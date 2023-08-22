@@ -1,0 +1,15 @@
+package com.virtual.key;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		do {
+			System.out.println("1:Add Product 2:Number Of Product 3:Delete Product 4: Update Product Price 5: Display All Product");
+		}
+
+	}
+
+}
