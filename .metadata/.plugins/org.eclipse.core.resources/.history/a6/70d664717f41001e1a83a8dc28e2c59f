@@ -1,9 +1,6 @@
 package com.virtual.key;
 
-import java.util.LinkedList;
 import java.util.Scanner;
-import com.virtual.*;
-import com.virtual.file.FileService;
 
 
 public class Main {
@@ -18,24 +15,11 @@ public class Main {
 			System.out.println("Plz enter your choice");
 			choice = sc.nextInt();
 			if (choice == 1) {
-				System.out.println("Here you are the files in ascending order");
-				LinkedList<String> FileNames = FileService.getFileNames();
-				if (FileNames.isEmpty()) {
-					System.out.println("File not found");
-								
-				} else {
-					System.out.println("File List :");
-					for (String file: FileNames) {
-						System.out.println(FileNames);
-						
-					}
-					
-				}
+				System.out.println("Here you are the files in ascending order");		
 			} else if (choice == 2) {
 							showSubMenu(scanner);
 				
 			} else if (choice == 3) {
-				System.out.println("Exit Program"); 
 				System.exit(0);
 			} else {
 				System.out.println("Wrong Choice");
