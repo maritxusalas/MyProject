@@ -1,6 +1,8 @@
 package com.virtual.key;
+
 import java.util.LinkedList;
 import java.util.Scanner;
+import com.virtual.*;
 import com.virtual.file.FileService;
 
 
@@ -8,8 +10,8 @@ public class Main {
 	
 	public static void main(String[] args) {
 		int choice;
-		//String con;
-		String path = "/home/mariasalasvodaf/Desktop/MyProject/Files";
+		String con;
+		String path = "home/mariasalasvodaf/Desktop/MyProject";
 				Scanner sc = new Scanner(System.in);
 				Scanner scanner  = new Scanner(System.in);
 		do {
@@ -25,7 +27,7 @@ public class Main {
 				} else {
 					System.out.println("File List :");
 					for (String file: FileNames) {
-						System.out.println(file);
+						System.out.println(FileNames);
 						
 					}
 					
@@ -39,9 +41,9 @@ public class Main {
 			} else {
 				System.out.println("Wrong Choice");
 			}
-			//System.out.println("do you want to continue?");
-			//con = sc.next();
-		}while (choice != 3);
+			System.out.println("do you want to continue?");
+			con = sc.next();
+		}while (con.equalsIgnoreCase("y"));
 		System.out.println("Thank you!");
 		sc.close();
 
