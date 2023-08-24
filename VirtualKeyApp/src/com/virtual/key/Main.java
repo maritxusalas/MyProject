@@ -2,16 +2,20 @@ package com.virtual.key;
 import java.util.LinkedList;
 import java.util.Scanner;
 import com.virtual.file.FileService;
-
+import com.virtual.file.AddFile;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		int choice;
 		//String con;
 		String path = "/home/mariasalasvodaf/Desktop/MyProject/Files";
 				Scanner sc = new Scanner(System.in);
 				Scanner scanner  = new Scanner(System.in);
+				BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		do {
 			System.out.println("1:Retrieve file names in ascending order 2:Add, delete, search a file 3:Close");
 			System.out.println("Plz enter your choice");
@@ -31,7 +35,7 @@ public class Main {
 					
 				}
 			} else if (choice == 2) {
-							showSubMenu(scanner);
+							showSubMenu(scanner, reader);
 				
 			} else if (choice == 3) {
 				System.out.println("Exit Program"); 
@@ -44,31 +48,39 @@ public class Main {
 		}while (choice != 3);
 		System.out.println("Thank you!");
 		sc.close();
+		reader.close();
 
 	}
 
-	private static void showSubMenu(Scanner scanner) {
+	private static void showSubMenu(Scanner scanner, BufferedReader reader) throws IOException {
 					
 			int subChoice;
-					
+			String path = "/home/mariasalasvodaf/Desktop/MyProject/Files";	
+			
 			do {
-				System.out.println("1:Add a file 2:Delet a file 3:Return to Main Menu");
+				System.out.println("1:Add a file 2:Delete a file 3:Search a file 4:Return to Main Menu");
 				System.out.println("Plz enter your choice");
 				subChoice = scanner.nextInt();
 				switch (subChoice) {
 				case 1:
-					System.out.println("You are adding a file");
+					System.out.println("Introduce un fichero ");
+					String newFile = reader.readLine();
+					System.out.println(newFile);
+					LinkedList<String> FileNames = AddFile.AddOneFile(newFile, path);
+				System.out.println("File Added");
 					break;
 				case 2:
 					System.out.println("You are deleting a file");
 					break;
 				case 3:
+					System.out.println("You are searching a file");
+				case 4:
 					System.out.println("You are returning to Main Menu");
 					break;
 				default:
 				System.out.println("Opcion no valida");
 				}
-			} while (subChoice != 3);
+			} while (subChoice != 4);
 			}
 		
 	

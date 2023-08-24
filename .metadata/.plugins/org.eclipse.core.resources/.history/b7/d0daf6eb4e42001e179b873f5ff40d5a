@@ -1,0 +1,12 @@
+package com.virtual.file;
+
+import java.util.LinkedList;
+
+public class AddFile extends FileService {
+	public static LinkedList<String> AddOneFile (String NewFile, String Path) {
+		LinkedList<String> FileNames = getFileNames(Path);
+		FileNames.add(NewFile);
+		return FileNames;
+			}
+
+}
