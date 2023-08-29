@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		int choice;
 		//String con;
-		String path = "/home/mariasalasvodaf/Desktop/MyProject/Files";
+		String path = "C:\\Users\\msalas1\\eclipse-workspace\\VirtualKeyForRepositories\\MyProject\\Files";
 				Scanner sc = new Scanner(System.in);
 				Scanner scanner  = new Scanner(System.in);
 				BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -55,7 +55,7 @@ public class Main {
 	private static void showSubMenu(Scanner scanner, BufferedReader reader) throws IOException {
 					
 			int subChoice;
-			String path = "/home/mariasalasvodaf/Desktop/MyProject/Files";	
+			String path = "C:\\Users\\msalas1\\eclipse-workspace\\VirtualKeyForRepositories\\MyProject\\Files";	
 			
 			do {
 				System.out.println("1:Add a file 2:Delete a file 3:Search a file 4:Return to Main Menu");
