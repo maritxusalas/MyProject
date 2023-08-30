@@ -1,8 +1,10 @@
 package com.virtual.key;
 import java.util.LinkedList;
 import java.util.Scanner;
-import com.virtual.file.FileService;
-import com.virtual.file.AddFile;
+import com.virtual.file.*;
+//import com.virtual.file.AddFile;
+//import com.virtual.file.DeleteFile;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,7 +24,7 @@ public class Main {
 			choice = sc.nextInt();
 			if (choice == 1) {
 				System.out.println("Here you are the files in ascending order");
-				LinkedList<String> FileNames = FileService.getFileNames(path);
+				LinkedList<String> FileNames = SortFile.SortFileNames(path);
 				if (FileNames.isEmpty()) {
 					System.out.println("File not found");
 								
@@ -46,7 +48,7 @@ public class Main {
 			//System.out.println("do you want to continue?");
 			//con = sc.next();
 		}while (choice != 3);
-		System.out.println("Thank you!");
+		//System.out.println("Thank you!");
 		sc.close();
 		reader.close();
 
@@ -66,14 +68,21 @@ public class Main {
 					System.out.println("Introduce un fichero ");
 					String newFile = reader.readLine();
 					System.out.println(newFile);
-					LinkedList<String> FileNames = AddFile.AddOneFile(newFile, path);
+					AddFile.AddOneFile(newFile, path);
 				System.out.println("File Added");
 					break;
 				case 2:
-					System.out.println("You are deleting a file");
+					System.out.println("Introduce un fichero ");
+					String DelFile = reader.readLine();
+					System.out.println(DelFile);
+					DeleteFile.DeleteOneFile(DelFile, path);
 					break;
 				case 3:
-					System.out.println("You are searching a file");
+					System.out.println("Introduce un fichero ");
+					String SFile = reader.readLine();
+					System.out.println(SFile);
+					SearchFile.SearchOneFile(SFile, path);
+					break;
 				case 4:
 					System.out.println("You are returning to Main Menu");
 					break;

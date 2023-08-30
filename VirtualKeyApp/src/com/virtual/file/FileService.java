@@ -1,7 +1,6 @@
 package com.virtual.file;
 
 import java.io.File;
-import java.util.Collections;
 import java.util.LinkedList;
 
 public class FileService {
@@ -23,7 +22,6 @@ public class FileService {
 		}
 	
 	}
-	Collections.sort(FileNames);
 	return FileNames;
 	}
 }

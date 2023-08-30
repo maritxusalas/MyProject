@@ -4,9 +4,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.LinkedList;
 
-public class AddFile {
-	public static LinkedList<String> AddOneFile (String NewFile, String Path) {
-		LinkedList<String> FileNames = new LinkedList<>();
+public class AddFile extends FileService{
+	public static void AddOneFile (String NewFile, String Path) {
+		LinkedList<String> FileNames = FileService.getFileNames(Path);
 		try {
 		File dir = new File(Path);
 		File file = new File (dir, NewFile);
@@ -18,7 +18,7 @@ public class AddFile {
 		} catch (IOException e) {
 			System.out.println("Error al agregar el archivo " +e.getMessage());
 		}
-			return FileNames;
-			}
+			
+	}
 
 }
