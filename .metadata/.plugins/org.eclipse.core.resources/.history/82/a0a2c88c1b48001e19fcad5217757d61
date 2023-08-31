@@ -71,8 +71,8 @@ public class Main {
 					System.out.println("Introduce un fichero ");
 					String newFile = reader.readLine();
 					System.out.println(newFile);
-					//AddFile.AddOneFile(newFile, path);
-				//System.out.println("File Added");
+					AddFile.AddOneFile(newFile, path);
+				System.out.println("File Added");
 					break;
 				case 2:
 					System.out.println("Introduce un fichero ");

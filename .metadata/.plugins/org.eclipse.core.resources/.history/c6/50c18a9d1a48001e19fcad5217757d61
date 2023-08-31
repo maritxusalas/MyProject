@@ -29,7 +29,7 @@ public class Main {
 				System.out.println("Here you are the files in ascending order");
 				LinkedList<String> FileNames = SortFile.SortFileNames(path);
 				if (FileNames.isEmpty()) {
-					System.out.println("No files are found");
+					System.out.println("File not found");
 								
 				} else {
 					System.out.println("File List :");
@@ -71,8 +71,8 @@ public class Main {
 					System.out.println("Introduce un fichero ");
 					String newFile = reader.readLine();
 					System.out.println(newFile);
-					//AddFile.AddOneFile(newFile, path);
-				//System.out.println("File Added");
+					AddFile.AddOneFile(newFile, path);
+				System.out.println("File Added");
 					break;
 				case 2:
 					System.out.println("Introduce un fichero ");

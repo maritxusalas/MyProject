@@ -1,6 +1,0 @@
-package com.virtual.file;
-
-public class AddFile extends FileService {
-	
-
-}

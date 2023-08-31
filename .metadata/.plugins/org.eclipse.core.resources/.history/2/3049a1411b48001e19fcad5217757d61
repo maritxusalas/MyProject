@@ -19,7 +19,7 @@ public class Main {
 		System.out.println("--------------------------------------------------------------------------------");
 		String path = "C:\\Users\\msalas1\\eclipse-workspace\\VirtualKeyForRepositories\\MyProject\\Files";
 				Scanner sc = new Scanner(System.in);
-				Scanner scanner  = new Scanner(System.in);
+				//Scanner scanner  = new Scanner(System.in);
 				BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		do {
 			System.out.println("1:Retrieve file names in ascending order 2:Add, delete, search a file 3:Close");
@@ -29,7 +29,7 @@ public class Main {
 				System.out.println("Here you are the files in ascending order");
 				LinkedList<String> FileNames = SortFile.SortFileNames(path);
 				if (FileNames.isEmpty()) {
-					System.out.println("No files are found");
+					System.out.println("File not found");
 								
 				} else {
 					System.out.println("File List :");
@@ -40,7 +40,7 @@ public class Main {
 					
 				}
 			} else if (choice == 2) {
-							showSubMenu(scanner, reader);
+							showSubMenu(reader);
 				
 			} else if (choice == 3) {
 				System.out.println("Exit Program"); 
@@ -57,7 +57,7 @@ public class Main {
 
 	}
 
-	private static void showSubMenu(Scanner scanner, BufferedReader reader) throws IOException {
+	private static void showSubMenu(BufferedReader reader) throws IOException {
 					
 			int subChoice;
 			String path = "C:\\Users\\msalas1\\eclipse-workspace\\VirtualKeyForRepositories\\MyProject\\Files";	
@@ -71,8 +71,8 @@ public class Main {
 					System.out.println("Introduce un fichero ");
 					String newFile = reader.readLine();
 					System.out.println(newFile);
-					//AddFile.AddOneFile(newFile, path);
-				//System.out.println("File Added");
+					AddFile.AddOneFile(newFile, path);
+				System.out.println("File Added");
 					break;
 				case 2:
 					System.out.println("Introduce un fichero ");

@@ -14,7 +14,7 @@ public class AddFile extends FileService{
 		fos.close();
 		System.out.println("File added to dir");
 		FileNames.add(NewFile);
-		System.out.println("File added to List");
+		System.out.println("File added");
 		} catch (IOException e) {
 			System.out.println("Error al agregar el archivo " +e.getMessage());
 		}
