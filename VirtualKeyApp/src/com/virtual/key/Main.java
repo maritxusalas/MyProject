@@ -1,6 +1,7 @@
 package com.virtual.key;
 import java.util.LinkedList;
 import java.util.Scanner;
+//import java.util.InputMismatchException;
 import com.virtual.file.*;
 //import com.virtual.file.AddFile;
 //import com.virtual.file.DeleteFile;
@@ -12,20 +13,21 @@ import java.io.InputStreamReader;
 public class Main {
 	
 	public static void main(String[] args) throws IOException {
-		int choice;
-		//String con;
+		int choice = 1;
 		System.out.println("***********************WELCOME TO VIRTUAL KEY APPLICATION**********************");
 		System.out.println("********************Program developped by Maria Salas (Maritxu)****************");
 		System.out.println("--------------------------------------------------------------------------------");
 		String path = "C:\\Users\\msalas1\\eclipse-workspace\\VirtualKeyForRepositories\\MyProject\\Files";
-				Scanner sc = new Scanner(System.in);
+				Scanner sc = new Scanner(System.in); //variable definition to introduce options in the main menu
 				Scanner scanner  = new Scanner(System.in);
 				BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		do {
+		while (choice != 3) {
+			try {
 			System.out.println("1:Retrieve file names in ascending order 2:Add, delete, search a file 3:Close");
-			System.out.println("Plz enter your choice");
+			System.out.println("Please enter your choice");
 			choice = sc.nextInt();
-			if (choice == 1) {
+			switch (choice) {
+			case 1:
 				System.out.println("Here you are the files in ascending order");
 				LinkedList<String> FileNames = SortFile.SortFileNames(path);
 				if (FileNames.isEmpty()) {
@@ -35,23 +37,25 @@ public class Main {
 					System.out.println("File List :");
 					for (String file: FileNames) {
 						System.out.println(file);
-						
 					}
-					
 				}
-			} else if (choice == 2) {
+			break;	
+			case 2:
 							showSubMenu(scanner, reader);
+			break;
 				
-			} else if (choice == 3) {
+			case  3:
 				System.out.println("Exit Program"); 
-				System.exit(0);
-			} else {
+			break;
+			default:
 				System.out.println("Wrong Choice");
 			}
-			//System.out.println("do you want to continue?");
-			//con = sc.next();
-		}while (choice != 3);
-		//System.out.println("Thank you!");
+			} catch ( java.util.InputMismatchException e) {
+				System.out.println("WRONG!!!! Introduce an integer from 1 to 3"); 
+				sc.nextLine();
+				choice = 1;
+			}
+			}
 		sc.close();
 		reader.close();
 
@@ -59,10 +63,11 @@ public class Main {
 
 	private static void showSubMenu(Scanner scanner, BufferedReader reader) throws IOException {
 					
-			int subChoice;
+			int subChoice = 1;
 			String path = "C:\\Users\\msalas1\\eclipse-workspace\\VirtualKeyForRepositories\\MyProject\\Files";	
 			
-			do {
+			while (subChoice != 4) {
+				try {
 				System.out.println("1:Add a file 2:Delete a file 3:Search a file 4:Return to Main Menu");
 				System.out.println("Plz enter your choice");
 				subChoice = scanner.nextInt();
@@ -71,8 +76,7 @@ public class Main {
 					System.out.println("Introduce un fichero ");
 					String newFile = reader.readLine();
 					System.out.println(newFile);
-					//AddFile.AddOneFile(newFile, path);
-				//System.out.println("File Added");
+					AddFile.AddOneFile(newFile, path);
 					break;
 				case 2:
 					System.out.println("Introduce un fichero ");
@@ -92,9 +96,12 @@ public class Main {
 				default:
 				System.out.println("Opcion no valida");
 				}
-			} while (subChoice != 4);
+				}
+				catch ( java.util.InputMismatchException e) {
+					System.out.println("WRONG!!!! Introduce an integer from 1 to 4"); 
+					scanner.nextLine();
+					subChoice = 1;
+				}
+				} 
 			}
-		
-	
-
-}
+		}
