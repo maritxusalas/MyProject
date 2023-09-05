@@ -1,0 +1,14 @@
+package com.virtual.file;
+
+import java.util.Collections;
+import java.util.LinkedList;
+
+public class SortFile{
+	public static LinkedList<String> SortFileNames(String path) {
+		FileService var = new FileService();
+		LinkedList<String> FileNames = var.getFileNames(path);
+		Collections.sort(FileNames);
+		return FileNames;
+	}
+
+}
