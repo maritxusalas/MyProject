@@ -75,8 +75,6 @@ public class Main {
 	private static void showSubMenu(Scanner scanner, BufferedReader reader, String path) throws IOException {
 					
 			int subChoice = 1;
-		//	String path = "C:\\Users\\msalas1\\eclipse-workspace\\VirtualKeyForRepositories\\MyProject\\Files";	
-			
 			while (subChoice != 4) {
 				try {
 				System.out.println("1:Add a file 2:Delete a file 3:Search a file 4:Return to Main Menu");
@@ -86,19 +84,16 @@ public class Main {
 				case 1:
 					System.out.println("Introduce un fichero ");
 					String newFile = reader.readLine();
-					//System.out.println(newFile);
 					AddFile.AddOneFile(newFile, path);
 					break;
 				case 2:
 					System.out.println("Introduce un fichero ");
 					String DelFile = reader.readLine();
-					//System.out.println(DelFile);
 					DeleteFile.DeleteOneFile(DelFile, path);
 					break;
 				case 3:
 					System.out.println("Introduce un fichero ");
 					String SFile = reader.readLine();
-					//System.out.println(SFile);
 					SearchFile.SearchOneFile(SFile, path);
 					break;
 				case 4:

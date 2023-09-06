@@ -4,9 +4,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.LinkedList;
 
-public class AddFile{
+public class AddFile extends FileService{
 	public static void AddOneFile (String NewFile, String Path) {
-		// I add files both to root directory as well as to LinkedList Filenames 
 		LinkedList<String> FileNames = FileService.getFileNames(Path);
 		File dir = new File(Path);
 		File file = new File (dir, NewFile);

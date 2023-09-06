@@ -8,7 +8,6 @@ public class DeleteFile {
 			public static void DeleteOneFile (String DelFile, String Path) {
 			LinkedList<String> FileNames = FileService.getFileNames(Path);
 			int i = 0;
-			// Here I use interface iterator to search the File DelFile. I remove the file from list and directory
 			ListIterator<String> iterator = FileNames.listIterator();
 			 while (iterator.hasNext() && i==0) {
 		            String ThisFile = iterator.next();

@@ -6,6 +6,7 @@ import java.util.ListIterator;
 public class SearchFile{
 	public static void SearchOneFile (String SearchFile, String Path) {
 		LinkedList<String> FileNames = FileService.getFileNames(Path);
+		//String FileToSearch = SearchFile.toLowerCase();
 		int i = 0;
 		ListIterator<String> iterator = FileNames.listIterator();
 		 while (iterator.hasNext() && i==0) {
