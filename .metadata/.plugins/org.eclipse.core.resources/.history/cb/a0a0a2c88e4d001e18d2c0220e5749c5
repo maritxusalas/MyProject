@@ -1,0 +1,9 @@
+package com.virtual.mai;
+
+public class MainMenu {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
