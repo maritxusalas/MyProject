@@ -21,17 +21,17 @@ static void showSubMenu(Scanner scanner, BufferedReader reader, String path) thr
 		subChoice = scanner.nextInt();
 		switch (subChoice) {
 		case 1:
-			System.out.println("Introduce a file to add");
+			System.out.println("Introduce un fichero ");
 			String newFile = reader.readLine();
 			AddFile.AddOneFile(newFile, path);
 			break;
 		case 2:
-			System.out.println("Introduce a file to remove");
+			System.out.println("Introduce un fichero ");
 			String DelFile = reader.readLine();
 			DeleteFile.DeleteOneFile(DelFile, path);
 			break;
 		case 3:
-			System.out.println("Introduce a file to search");
+			System.out.println("Introduce un fichero ");
 			String SFile = reader.readLine();
 			SearchFile.SearchOneFile(SFile, path);
 			break;
@@ -39,7 +39,7 @@ static void showSubMenu(Scanner scanner, BufferedReader reader, String path) thr
 			System.out.println("You are returning to Main Menu");
 			break;
 		default:
-		System.out.println("No valid option");
+		System.out.println("Opcion no valida");
 		}
 		}
 		catch ( java.util.InputMismatchException e) {

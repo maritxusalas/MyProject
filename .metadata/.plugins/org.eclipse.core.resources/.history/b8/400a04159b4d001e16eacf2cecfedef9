@@ -27,6 +27,7 @@ public class MainMenu {
 		//Use of switch statement to select the different options of the main menu
 		switch (choice) {
 		case 1:
+			System.out.println("Here you are the files in ascending order");
 			//Create a variable FileNames that stores a list of Strings. That list is the result of calling SortFileNames(path)
 			//method in the class SortFile
 			LinkedList<String> FileNames = SortFile.SortFileNames(path);
@@ -35,7 +36,6 @@ public class MainMenu {
 				System.out.println("No files are found");
 							
 			} else {
-				System.out.println("Here you are the files in ascending order");
 				System.out.println("File List :");
 				for (String file: FileNames) {
 					System.out.println(file);

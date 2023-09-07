@@ -16,7 +16,7 @@ public class SearchFile{
 	            	}
 		 	}
 		 if (i == 0) {
-			 System.out.println("The file \"" + SearchFile + "\" doesn't exist in the directory");
+			 System.out.println("El archivo \"" + SearchFile + "\" no existe en el directorio.");
 		 }
 }
 }
